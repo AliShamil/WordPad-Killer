@@ -47,10 +47,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.combo_Font = new System.Windows.Forms.ComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -168,16 +168,14 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Left",
-            "Center",
-            "Right"});
             this.comboBox4.Location = new System.Drawing.Point(25, 24);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(71, 23);
             this.comboBox4.TabIndex = 0;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.comboBox4.SelectedValueChanged += new System.EventHandler(this.comboBox4_SelectedValueChanged);
             // 
             // panel3
             // 
@@ -202,18 +200,13 @@
             // 
             // combo_Font_Style
             // 
+            this.combo_Font_Style.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_Font_Style.FormattingEnabled = true;
-            this.combo_Font_Style.Items.AddRange(new object[] {
-            "Regular",
-            "Bold",
-            "Italic",
-            "Underline",
-            "Strikeout"});
             this.combo_Font_Style.Location = new System.Drawing.Point(17, 24);
             this.combo_Font_Style.Name = "combo_Font_Style";
             this.combo_Font_Style.Size = new System.Drawing.Size(71, 23);
             this.combo_Font_Style.TabIndex = 0;
-            this.combo_Font_Style.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.combo_Font_Style.SelectedValueChanged += new System.EventHandler(this.comboBox4_SelectedValueChanged);
             // 
             // panel2
             // 
@@ -238,6 +231,7 @@
             // 
             // combo_Size
             // 
+            this.combo_Size.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_Size.FormattingEnabled = true;
             this.combo_Size.Items.AddRange(new object[] {
             "8",
@@ -260,6 +254,7 @@
             this.combo_Size.Name = "combo_Size";
             this.combo_Size.Size = new System.Drawing.Size(61, 23);
             this.combo_Size.TabIndex = 0;
+            this.combo_Size.SelectedValueChanged += new System.EventHandler(this.comboBox4_SelectedValueChanged);
             // 
             // panel1
             // 
@@ -284,34 +279,33 @@
             // 
             // combo_Font
             // 
-            this.combo_Font.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.combo_Font.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_Font.FormattingEnabled = true;
             this.combo_Font.Location = new System.Drawing.Point(25, 24);
             this.combo_Font.Name = "combo_Font";
             this.combo_Font.Size = new System.Drawing.Size(121, 23);
             this.combo_Font.TabIndex = 0;
-            this.combo_Font.SelectedIndexChanged += new System.EventHandler(this.combo_Font_SelectedIndexChanged);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox1.Location = new System.Drawing.Point(0, 71);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(800, 379);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.combo_Font.SelectedValueChanged += new System.EventHandler(this.comboBox4_SelectedValueChanged);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(0, 71);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(800, 379);
+            this.textBox1.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -329,6 +323,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -346,7 +341,6 @@
         private ComboBox combo_Size;
         private Panel panel1;
         private ComboBox combo_Font;
-        private RichTextBox richTextBox1;
         private Label label5;
         private Label label4;
         private Label label3;
@@ -357,5 +351,6 @@
         private ComboBox comboBox4;
         private SaveFileDialog saveFileDialog1;
         private OpenFileDialog openFileDialog1;
+        private TextBox textBox1;
     }
 }
